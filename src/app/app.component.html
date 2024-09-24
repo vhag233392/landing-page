@@ -17,7 +17,17 @@
       </div>
     </div>
   
-    
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold mb-6">RECOPILACION 2</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div *ngFor="let album of albums" class="bg-white shadow-md rounded-lg p-4">
+          <img [src]="album.cover" [alt]="album.title" class="w-full h-48 object-cover mb-4">
+          <h3 class="text-xl font-semibold mb-2">{{ album.title }}</h3>
+          <p class="text-blue-400">{{ album.year }}</p>
+          <p class="text-blue-400">{{ album.rating }}</p>
+        </div>
+      </div>
+    </div>
   
     <div class="flex justify-center">
       <button class="bg-blue-400 text-white px-8 py-2 rounded-full text-xl font-semibold">STATS</button>
