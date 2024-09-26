@@ -58,13 +58,14 @@
     </div>
   
     <div class="flex justify-center">
-      <button class="bg-bluemusic text-black px-10 py-4 rounded-sm text-xl font-semibold" (click)="showStatsModal()">STATS</button>
+      <button class="bg-bluemusic text-black px-10 py-4  text-xl font-semibold" (click)="showStatsModal()">STATS</button>
     </div>
   </div>  
 
   <div *ngIf="isStatsModalVisible" class="fixed inset-0 bg-gradient-to-tr from-zinc-900 to-gray-800 flex justify-center items-center h-50%">
-    <div class=" rounded-lg shadow-lg p-6 flex flex-col">
+    <div class=" p-6 flex flex-col">
         <div class="flex-grow">
+          <div><h1 class="text-white">Los Mexicanos en 2024 esuchan en promedio:</h1></div>
             <div class="stats stats-vertical lg:stats-horizontal shadow">
                 <div class="stat">
                     <div class="stat-title text-blue-500">Pop</div>
