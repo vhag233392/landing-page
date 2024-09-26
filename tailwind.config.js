@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        jersey: ['Jersey 20', 'sans-serif'],
+        
       },
       colors:{
         'greenwhite':'#EFF7EC',
