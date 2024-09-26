@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+20&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
-h1{
-font-family: "Jersey 20", sans-serif;
+h1, div{
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
