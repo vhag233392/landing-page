@@ -1,0 +1,90 @@
+
+<div class="min-h-screen bg-greenwhite p-4">
+
+        <h1 class="text-6xl font-['Jersey 20'] mb-8 text-center">
+            <span class="text-red-500">M</span><span class="text-bluemusic">OO</span><span class="text-red-500">SIC</span>
+        </h1>
+  
+    <div class="mb-12">
+      <h2 class="text-4xl font-jersey mb-6 ">RECOPILACION</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div *ngFor="let album of albums" class="bg-greenwhite shadow-md rounded-lg p-4 " (click)="openModal(album)">
+          <img [src]="album.cover" [alt]="album.title" class="w-full h-70 object-cover mb-4">
+          <h3 class="text-redmusic text-xl mb-2">{{ album.title }}</h3>
+          <p class="text-bluemusic ">{{ album.year }}</p>
+          <p class="text-bluemusic ">{{ album.rating }}</p>
+        </div>
+      </div>
+    </div>
+
+        <!-- Modal -->
+        <div *ngIf="isModalOpen" class="fixed inset-0 bg-bluemusic flex justify-center items-center">
+          <div class="bg-bluemusic p-6 rounded-lg max-w-lg w-full flex flex-col items-center">
+              <img [src]="selectedAlbum?.cover" alt="{{ selectedAlbum?.title }}" class="w-60 h-60 object-cover mb-4">
+              <div class="text-white text-center">
+                  <h3 class="text-white text-2xl font-bold mb-2">{{ selectedAlbum?.title || 'Sgt Pepper Lonely Hearts Club Band' }}</h3>
+                  <p class="text-white text-lg">{{ selectedAlbum?.year || '1967' }}</p>
+                  <p class="text-yellow-400 text-lg font-bold">4/5</p>
+                  <p class="text-white text-sm mt-4 max-w-sm text-justify">
+                      {{ selectedAlbum?.description }}
+                  </p>
+              </div>
+              <button (click)="toggleModal()" class="mt-4 px-4 py-2 bg-redmusic text-yellow-400 rounded-lg">VOLVER</button>
+          </div>
+      </div>
+  
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold mb-6">RECOPILACION 2</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div *ngFor="let album of albums2" class="bg-greenwhite shadow-md rounded-lg p-4" (click)="openModal(album)">
+          <img [src]="album.cover" [alt]="album.title" class="w-full h-70 object-cover mb-4">
+          <h3 class="text-redmusic text-xl font-semibold mb-2">{{ album.title }}</h3>
+          <p class="text-bluemusic">{{ album.year }}</p>
+          <p class="text-bluemusic">{{ album.rating }}</p>
+        </div>
+      </div>
+      <br>
+
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold mb-6">RECOPILACION 3</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div *ngFor="let album of albums3" class="bg-greenwhite shadow-md rounded-lg p-4" (click)="openModal(album)">
+          <img [src]="album.cover" [alt]="album.title" class="w-full h-70 object-cover mb-4">
+          <h3 class="text-redmusic text-xl font-semibold mb-2">{{ album.title }}</h3>
+          <p class="text-bluemusic">{{ album.year }}</p>
+          <p class="text-bluemusic">{{ album.rating }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="flex justify-center">
+      <button class="bg-bluemusic text-black px-10 py-4  text-xl font-semibold" (click)="showStatsModal()">STATS</button>
+    </div>
+  </div>  
+
+  <div *ngIf="isStatsModalVisible" class="fixed inset-0 bg-gradient-to-tr from-zinc-900 to-gray-800 flex justify-center items-center h-50%">
+    <div class=" p-6 flex flex-col">
+        <div class="flex-grow">
+          <div><h1 class="text-white">Los Mexicanos en 2024 esuchan en promedio:</h1></div>
+            <div class="stats stats-vertical lg:stats-horizontal shadow">
+                <div class="stat">
+                    <div class="stat-title text-blue-500">Pop</div>
+                    <div class="stat-value text-blue-500">40%</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title text-yellow-500">Regional</div>
+                    <div class="stat-value text-yellow-500">20%</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title text-green-500">Alternativo</div>
+                    <div class="stat-value text-green-500">15%</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-title text-red-500">Rock</div>
+                    <div class="stat-value text-red-500">15%</div>
+                </div>
+            </div>
+        </div>
+        <button class="mt-4 bg-red-500 text-white px-4 py-2 rounded-sm self-center mb-4" (click)="hideStatsModal()">Cerrar</button>
+    </div>
+</div>
